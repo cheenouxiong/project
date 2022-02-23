@@ -1,0 +1,39 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      header
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true"> 
+
+    <ion-slides  [options]="catSlideOpts" scrollbar="ios" >
+      <ion-slide *ngFor="let item of data">
+        <ion-card>
+          <img src="{{item.image}}" alt="">
+          <ion-label>{{item.category}}</ion-label> 
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+
+    <ion-slides class="highlight"  [options]="highlightSlidesOpts">
+      <ion-slide class="slid" *ngFor="let item of highlight">       
+          <img class="imge" src="{{item.image}}" alt="">                     
+      </ion-slide>
+    </ion-slides>
+
+    <ion-slides [option]="feature" scrollbar="ios">
+      <ion-slide>
+        <h1>Awesome Slide Content</h1>
+      </ion-slide>
+    </ion-slides>
+  <!-- <div *ngFor="let item of data">
+    <ion-label>{{item.meals[0].id}}</ion-label> 
+    <ion-label>{{item.meals[0].name}}</ion-label>
+    <ion-label>{{item.meals[0].price}}</ion-label>
+    <ion-label>{{item.meals[0].info}}</ion-label>
+   <img src="{{item.meals[0].image}}" alt=""> 
+  </div>
+     -->
+</ion-content>
